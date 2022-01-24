@@ -48,6 +48,7 @@
         <package name="timezone"/>
         <package name="dracut-kiwi-oem-repart"/>
         <package name="dracut-kiwi-oem-dump"/>
+        <package name="NetworkManager"/>
 
         <package name="lightdm"/>
 
