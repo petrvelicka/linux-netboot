@@ -45,7 +45,6 @@
         <package name="bind-utils"/>
         <package name="dhcp-client"/>
         <package name="which"/>
-        <package name="kernel-default"/>
         <package name="timezone"/>
         <package name="dracut-kiwi-oem-repart"/>
         <package name="dracut-kiwi-oem-dump"/>
@@ -62,8 +61,10 @@
 
         <package name="xf86-input-wacom"/>
 	    
+        <package name="kernel-default"/>
+        <package name="kernel-default-optional"/>
+        <package name="kernel-default-extra"/>
         <package name="kernel-firmware"/>
-        <package name="kernel-firmware-nvidia"/>
 
         <package name="htop"/>
         <package name="neofetch"/>
