@@ -34,8 +34,8 @@ suseSetupProduct
 #======================================
 # Activate services
 #--------------------------------------
-baseInsertService sshd
-baseInsertService sddm
+#baseInsertService sshd
+baseInsertService lightdm
 
 #======================================
 # Setup default target, multi-user
