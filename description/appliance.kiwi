@@ -58,8 +58,11 @@
         <package name="xf86-video-amdgpu"/>
         <package name="xf86-video-intel"/>
         <package name="xf86-video-nouveau"/>
+        <package name="Mesa-dri-nouveau"/>
+
         <package name="xf86-input-wacom"/>
-	    <package name="kernel-firmware"/>
+	    
+        <package name="kernel-firmware"/>
 
         <package name="htop"/>
         <package name="neofetch"/>
@@ -67,8 +70,12 @@
         <package name="MozillaFirefox"/>
         <package name="xfce4-terminal"/>
         <package name="mousepad"/>
-        <package name="libreoffice"/>
 
+        <package name="libreoffice"/>
+        <package name="libreoffice-writer"/>
+        <package name="libreoffice-impress"/>
+        <package name="libreoffice-calc"/>
+        
         <package name="xfce4-pulseaudio-plugin"/>
 
         <package name="gimp"/>
