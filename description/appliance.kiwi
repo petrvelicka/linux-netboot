@@ -68,6 +68,18 @@
         <package name="xfce4-terminal"/>
         <package name="mousepad"/>
         <package name="libreoffice"/>
+
+        <package name="xfce4-pulseaudio-plugin"/>
+        
+        <package name="gimp"/>
+        <package name="inkscape"/>
+        <package name="file-roller"/>
+
+        <package name="pavucontrol"/>
+        <package name="nano"/>
+
+        <package name="mc"/>
+        <package name="ranger"/>
     </packages>
     <packages type="bootstrap">
         <package name="udev"/>
