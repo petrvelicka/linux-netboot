@@ -63,6 +63,7 @@
         <package name="xf86-input-wacom"/>
 	    
         <package name="kernel-firmware"/>
+        <package name="kernel-firmware-nvidia"/>
 
         <package name="htop"/>
         <package name="neofetch"/>
@@ -81,6 +82,7 @@
         <package name="gimp"/>
         <package name="inkscape"/>
         <package name="file-roller"/>
+        <package name="evince"/>
 
         <package name="pavucontrol"/>
         <package name="nano"/>
