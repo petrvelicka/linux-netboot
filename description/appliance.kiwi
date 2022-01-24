@@ -64,7 +64,7 @@
         <package name="kernel-default"/>
         <package name="kernel-default-optional"/>
         <package name="kernel-default-extra"/>
-        <package name="kernel-firmware-all">
+        <package name="kernel-firmware-all"/>
 
 
         <package name="htop"/>
