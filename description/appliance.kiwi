@@ -70,7 +70,7 @@
         <package name="libreoffice"/>
 
         <package name="xfce4-pulseaudio-plugin"/>
-        
+
         <package name="gimp"/>
         <package name="inkscape"/>
         <package name="file-roller"/>
@@ -80,6 +80,8 @@
 
         <package name="mc"/>
         <package name="ranger"/>
+
+        <package name="mpv"/>
     </packages>
     <packages type="bootstrap">
         <package name="udev"/>
