@@ -64,7 +64,8 @@
         <package name="kernel-default"/>
         <package name="kernel-default-optional"/>
         <package name="kernel-default-extra"/>
-        <package name="kernel-firmware"/>
+        <package name="kernel-firmware-all">
+
 
         <package name="htop"/>
         <package name="neofetch"/>
