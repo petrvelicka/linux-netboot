@@ -7,7 +7,7 @@
         <specification>GJK OpenSUSE Leap 15.3 Image</specification>
     </description>
     <preferences>
-        <version>1.0.0</version>
+        <version>1.15.3</version>
         <packagemanager>zypper</packagemanager>
         <locale>en_US</locale>
         <keytable>us</keytable>
