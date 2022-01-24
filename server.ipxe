@@ -1,5 +1,5 @@
 #!ipxe
-set server-ip http://192.168.1.102:8000/
+set server-ip http://192.168.3.42/
 
 kernel ${server-ip}vmlinuz rd.neednet=1 ip=dhcp rd.live.debug=1 root=live:${server-ip}squashfs.img
 initrd ${server-ip}initrd.img
