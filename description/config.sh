@@ -36,6 +36,9 @@ suseSetupProduct
 #--------------------------------------
 #baseInsertService sshd
 baseInsertService lightdm
+baseInsertService NetworkManager
+
+baseRemoveService wicked
 
 #======================================
 # Setup default target, multi-user
