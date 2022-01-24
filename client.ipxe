@@ -1,5 +1,5 @@
 #!ipxe
 
-set server-url http://gjk.cz/~xvelpe01/
+set server-url http://178.248.252.60/~xvelpe01/
 dhcp
 chain ${server-url}config.ipxe

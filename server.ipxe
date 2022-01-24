@@ -1,5 +1,5 @@
 #!ipxe
-set server-ip http://gjk.cz/~xvelpe01/
+set server-ip http://178.248.252.60/~xvelpe01/
 
 kernel ${server-ip}vmlinuz rd.neednet=1 ip=dhcp rd.live.debug=1 root=live:${server-ip}squashfs.img
 initrd ${server-ip}initrd.img
