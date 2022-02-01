@@ -26,7 +26,7 @@
         <source path="obsrepositories:/"/>
     </repository>
     <packages type="image">
-        <namedCollection name="xfce"/>
+        <namedCollection name="kde"/>
         <package name="patterns-openSUSE-base"/>
         <package name="systemd"/>
         <package name="plymouth-theme-bgrt"/>
@@ -71,8 +71,9 @@
         <package name="neofetch"/>
 
         <package name="MozillaFirefox"/>
-        <package name="xfce4-terminal"/>
-        <package name="mousepad"/>
+        <package name="konsole"/>
+        <package name="dolphin"/>
+        <package name="kate"/>
 
         <package name="libreoffice"/>
         <package name="libreoffice-writer"/>
