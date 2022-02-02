@@ -85,8 +85,6 @@
         <package name="libreoffice-impress"/>
         <package name="libreoffice-calc"/>
         
-        <package name="xfce4-pulseaudio-plugin"/>
-
         <package name="gimp"/>
         <package name="inkscape"/>
         <package name="file-roller"/>
