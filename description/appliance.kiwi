@@ -51,7 +51,7 @@
         <package name="NetworkManager"/>
         <package name="sudo"/>
         <package name="pulseaudio"/>
-        <package name="lightdm"/>
+        <package name="sddm"/>
 
         <package name="xf86-video-vmware"/>
         <package name="xf86-video-amdgpu"/>

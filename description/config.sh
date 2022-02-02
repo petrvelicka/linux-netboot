@@ -35,7 +35,7 @@ suseSetupProduct
 # Activate services
 #--------------------------------------
 #baseInsertService sshd
-baseInsertService lightdm
+baseInsertService sddm
 baseInsertService NetworkManager
 
 baseRemoveService wicked
