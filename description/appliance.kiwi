@@ -84,6 +84,7 @@
         <package name="libreoffice-writer"/>
         <package name="libreoffice-impress"/>
         <package name="libreoffice-calc"/>
+        <package name="libreoffice-qt5"/>
         
         <package name="gimp"/>
         <package name="inkscape"/>
