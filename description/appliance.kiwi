@@ -66,6 +66,7 @@
         <package name="kernel-default-extra"/>
         <package name="kernel-firmware-all"/>
 
+        <package name="systemd-zram-service"/>
 
         <package name="htop"/>
         <package name="neofetch"/>

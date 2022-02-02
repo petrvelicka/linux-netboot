@@ -37,6 +37,7 @@ suseSetupProduct
 #baseInsertService sshd
 baseInsertService sddm
 baseInsertService NetworkManager
+baseInsertService zramswap
 
 baseRemoveService wicked
 
