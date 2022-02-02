@@ -68,6 +68,10 @@
 
         <package name="systemd-zram-service"/>
 
+        <package name="sddm-branding-openSUSE"/>
+        <package name="NetworkManager-branding-openSUSE"/>
+        <package name="plasma5-workspace-branding-openSUSE"/>
+
         <package name="htop"/>
         <package name="neofetch"/>
 
