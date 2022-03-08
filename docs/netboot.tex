@@ -1,0 +1,42 @@
+\documentclass{article}
+
+\title{Linux Netboot}
+\date{March 23, 2022}
+\author{Petr Velička}
+
+\usepackage{hyperref}
+
+\begin{document}
+
+\maketitle
+
+\section{Preface}
+
+The aim of this project is to create a bootable operating system image based on OpenSUSE Linux to be booted and fully operated from a network server.
+
+There are two possible modes to use the resulting image. One is to have a bootloader reside on the local hard drive which then loads the Linux kernel or a different operating system located on that hard drive (for example Microsoft Windows).
+
+\section{Kiwi}
+
+For the preparation of the system image, a tool maintained by the developers of SUSE Linux called Kiwi was chosen.
+
+% TODO: describe KIWI configuration
+
+\section{IPXE}
+
+Not every firmware supports direct booting of the Linux kernel from UEFI, therefore a separate program called bootloader is needed. For our case, iPXE is going to let the user choose either booting from network (downloading the script from the server and executing it) or just chainloading the system already installed on the locally present HDD. The exact process differs depending on the firmware of the machine (mainly whether (U)EFI is being used) but the overall principle is pretty much the same.
+
+\subsection{Building iPXE}
+
+The iPXE website (\url{https://ipxe.org/}) states that the git repository of the project is ought to be production-ready,
+therefore the process of building it consists merely of cloning the repository (\url{https://github.com/ipxe/ipxe.git}) and running \verb|make| in the source directory.
+
+Basic setup doesn't include anything useful to boot a system without user interaction though, therefore it is recommended to embed a script which automatically connects to a wired network and downloads a boot script located on a remote server.
+This is useful for changing boot parameters of the system without needing to rebuild and redeploy the bootloader to every client machine every time the configuration is changed.
+
+\section{Diskless boot}
+
+% TODO: add diskless boot setup
+% TODO: hostname setup by DHCP
+
+\end{document}
