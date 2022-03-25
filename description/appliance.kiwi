@@ -23,7 +23,7 @@
         <user password="student" pwdformat="plain" home="/home/student" name="student" groups="student,wheel"/>
     </users>
     <repository type="rpm-md">
-        <source path="obs://openSUSE:Leap:15.3/standard" imageinclude="true"/>
+        <source path="obs://openSUSE:Leap:15.3/standard" imageinclude/>
     </repository>
     <packages type="image">
         <namedCollection name="kde"/>
