@@ -18,22 +18,31 @@ There are two possible modes to boot an operating system from the network. One i
 
 \section{Kiwi}
 
-For the preparation of the system image, a tool maintained by the developers of SUSE Linux called Kiwi was chosen.
+For the preparation of the system image, a tool maintained by the developers of SUSE Linux called Kiwi was chosen. Refer to the KIWI documentation (\url{https://osinside.github.io/kiwi/installation.html}) in order to get it installed and running on your machine.
 
 All files used by kiwi reside in the \verb|description| directory of the repository. 
 
 To build the system image, issue the following command in the terminal
 
 \begin{verbatim}
-sudo kiwi-ng --type kis \
+sudo kiwi-ng --type kis system build \
       --description description/ \
-      --set-repo obs://openSUSE:Leap:15.3/standard \
       --target-dir /tmp/myimage
 \end{verbatim}
 
 The resulting image is located in \verb|/tmp/myimage|. This can be configured by altering the \verb|--target-dir| parameter in the above mentioned command.
 
-\section{IPXE}
+After copying it to the server (look for the kernel, initrd and squashfs images), make sure to also copy the server-side iPXE configuration which is a compulsory requirement for successfully booting the resulting system.
+
+\subsection{Image description}
+
+Main image description is located in \verb|description/appliance.kiwi|. It contains meta information about the image as well as the packages which should be included in the resulting image.
+
+For normal usage, only several parameters are needed, \verb|<packages type="image">| section includes packages which will be installed onto the resulting system and \verb|<repository type="rpm-md">| which lists repositories available during image bootstraping and later usage of the operating system itself.
+
+The \verb|root| subdirectory of the image contains files which are going to be copied into the system overwriting any files already existing there. 
+
+\section{iPXE}
 
 Not every firmware supports direct booting of the Linux kernel from UEFI, therefore a separate program called bootloader is needed. For our case, iPXE is going to let the user choose either booting from network (downloading the script from the server and executing it) or just chainloading the system already installed on the locally present HDD. The exact process differs depending on the firmware of the machine (mainly whether (U)EFI is being used) but the overall principle is pretty much the same.
 
@@ -45,7 +54,7 @@ therefore the process of building it consists merely of cloning the repository (
 Basic setup doesn't include anything useful to boot a system without user interaction though, therefore it is recommended to embed a script which automatically connects to a wired network and downloads a boot script located on a remote server.
 This is useful for changing boot parameters of the system without needing to rebuild and redeploy the bootloader to every client machine every time the configuration is changed.
 
-For that reason, \verb|client.ipxe| is included in the repo, which can be used to build a customized iPXE binary using \verb|make EMBED=path/to/client.ipxe|.
+For that reason, \verb|client.ipxe| is included in the repo, which can be used to build a customized iPXE binary using \verb|make EMBED=path/to/client.ipxe|. Make sure to edit the server address for it to point to the actual server where the image is located.
 Then, the resulting image for booting with GNU GRUB or other bootloaders capable of booting the Linux kernel (\url{https://www.gnu.org/software/grub/}) can be found in \verb|bin/ipxe.lkrn|.
 
 For EFI-capable machines, \verb|ipxe.efi| in the \verb|bin-x86_64-efi| subdirectory should be used which can be compiled using \verb|make bin-x86_64-efi/ipxe.efi|, including the \verb|EMDED| parameter if needed. Refer to your bootloader and/or motherboard documentation in order to figure out how to configure it to boot iPXE.
