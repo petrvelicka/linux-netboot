@@ -32,7 +32,7 @@ sudo kiwi-ng --type kis system build \
 
 The resulting image is located in \verb|/tmp/myimage|. This can be configured by altering the \verb|--target-dir| parameter in the above mentioned command.
 
-After copying it to the server (look for the kernel, initrd and squashfs images), make sure to also copy the server-side iPXE configuration which is a compulsory requirement for successfully booting the resulting system.
+After copying it to the server (look for the kernel, initrd and squashfs images), make sure to also copy the server-side iPXE configuration which is a compulsory requirement for successfully booting the resulting system. Don't forget to change the server address in the file itself.
 
 \subsection{Image description}
 
