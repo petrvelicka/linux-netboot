@@ -14,13 +14,24 @@
 
 The aim of this project is to create a bootable operating system image based on OpenSUSE Linux to be booted and fully operated from a network server.
 
-There are two possible modes to use the resulting image. One is to have a bootloader reside on the local hard drive which then loads the Linux kernel or a different operating system located on that hard drive (for example Microsoft Windows).
+There are two possible modes to boot an operating system from the network. One is to have a bootloader reside on the local hard drive which then loads the Linux kernel or a different operating system located on that hard drive (for example Microsoft Windows). This has the advantage that the configuration of the network doesn't have to be changed at all, the only requirement for it is to have an HTTP-capable server running anywhere on the network. Even remote servers located on the internet can be used for that purpose, although running the operating system from the network requires a steady network connection (with speed and latency of the internet not coming even close to those offered by local networks).
 
 \section{Kiwi}
 
 For the preparation of the system image, a tool maintained by the developers of SUSE Linux called Kiwi was chosen.
 
-% TODO: describe KIWI configuration
+All files used by kiwi reside in the \verb|description| directory of the repository. 
+
+To build the system image, issue the following command in the terminal
+
+\begin{verbatim}
+sudo kiwi-ng --type kis \
+      --description description/ \
+      --set-repo obs://openSUSE:Leap:15.3/standard \
+      --target-dir /tmp/myimage
+\end{verbatim}
+
+The resulting image is located in \verb|/tmp/myimage|. This can be configured by altering the \verb|--target-dir| parameter in the above mentioned command.
 
 \section{IPXE}
 
@@ -34,9 +45,13 @@ therefore the process of building it consists merely of cloning the repository (
 Basic setup doesn't include anything useful to boot a system without user interaction though, therefore it is recommended to embed a script which automatically connects to a wired network and downloads a boot script located on a remote server.
 This is useful for changing boot parameters of the system without needing to rebuild and redeploy the bootloader to every client machine every time the configuration is changed.
 
-\section{Diskless boot}
+For that reason, \verb|client.ipxe| is included in the repo, which can be used to build a customized iPXE binary using \verb|make EMBED=path/to/client.ipxe|.
+Then, the resulting image for booting with GNU GRUB or other bootloaders capable of booting the Linux kernel (\url{https://www.gnu.org/software/grub/}) can be found in \verb|bin/ipxe.lkrn|.
 
-% TODO: add diskless boot setup
-% TODO: hostname setup by DHCP
+For EFI-capable machines, \verb|ipxe.efi| in the \verb|bin-x86_64-efi| subdirectory should be used which can be compiled using \verb|make bin-x86_64-efi/ipxe.efi|, including the \verb|EMDED| parameter if needed. Refer to your bootloader and/or motherboard documentation in order to figure out how to configure it to boot iPXE.
+
+\subsection{Diskless boot}
+
+It is possible to configure a client to boot completely diskless using iPXE. For that, \verb|bin/ipxe.pxe| is used which is copied onto a TFTP server, to which the DHCP server points when giving an IP address to the machine. DHCP server can also be used to assign unique hostnames to the clients because the default image only has one hostname preconfigured.
 
 \end{document}
